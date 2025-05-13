@@ -10,7 +10,7 @@
     "start": "node ./dist/index.js",
     "dev": "nodemon",
     "build": "rimraf dist && tsc",
-    "add-build": "git add dist",
+    "build:css": "postcss public/styles/tailwind.css -o public/styles/global.css",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -18,11 +18,15 @@
     "nodemon": "^3.1.10",
     "pug": "^3.0.3",
     "rimraf": "^6.0.1",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "autoprefixer": "^10.4.21",
     "husky": "^9.1.7",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "ts-node": "^10.9.2"
   }
 }

@@ -11,6 +11,7 @@
     "dev": "nodemon",
     "build": "rimraf dist && tsc",
     "build:css": "postcss public/styles/tailwind.css -o public/styles/global.css",
+    "add-build": "git add dist",
     "prepare": "husky install"
   },
   "dependencies": {

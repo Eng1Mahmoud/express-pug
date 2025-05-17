@@ -12,7 +12,8 @@
     "build": "rimraf dist && tsc",
     "build:css": "postcss public/styles/tailwind.css -o public/styles/global.css",
     "add-build": "git add dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy-prepare": "npm run build:css && npm run build"
   },
   "dependencies": {
     "express": "^5.1.0",

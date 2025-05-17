@@ -48,6 +48,25 @@ npm run dev
 
 This runs the application using nodemon, which will automatically restart the server whenever you make changes to the files.
 
+### Deploying to Vercel
+
+This application is configured for deployment on Vercel. Follow these steps to deploy:
+
+1. Make sure all your CSS is built:
+
+```powershell
+npm run build:css
+```
+
+2. Push your code to GitHub
+
+3. Connect your repository to Vercel and deploy
+
+4. Troubleshooting deployment issues:
+   - Ensure all view templates are in the `views` folder
+   - Make sure static files are in the `public` folder
+   - Check that the CSS is properly built before deploying
+
 ### Full Build Process
 
 To build the application for production:

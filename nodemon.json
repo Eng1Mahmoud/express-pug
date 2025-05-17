@@ -1,5 +1,5 @@
 {
-  "watch": ["src"],
-  "ext": "ts",
+  "watch": ["*.ts", "views/**/*", "public/**/*"],
+  "ext": "ts,pug,css,js",
   "exec": "tsc --noEmit && node --no-warnings=ExperimentalWarning --loader ts-node/esm ./index.ts"
 }

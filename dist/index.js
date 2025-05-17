@@ -14,17 +14,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
     res.render("index");
 });
-// get products
-app.get("/products", (req, res) => {
-    const products = [
-        { name: "Product 1", description: "product description 1", price: 100 },
-        { name: "Product 2", description: "product description 2", price: 200 },
-        { name: "Product 3", description: "product description 3", price: 300 },
-    ];
-    res.render("products", {
-        products: products,
-    });
-});
 // unhandled routes
 app.use((req, res) => {
     res.status(404).render("404");

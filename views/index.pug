@@ -1,398 +1,220 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Civil Engineering Solutions | Expert Services   
-    link(rel="stylesheet", href="/styles/global.css")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
-    style.
-      .mobile-menu {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-      }
-      .mobile-menu.show {
-        transform: translateX(0);
-      }
-      .overlay {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      }
-      .overlay.show {
-        opacity: 0.5;
-        visibility: visible;
-      }
-  body(class="bg-gray-50 font-sans")
-    // Mobile Sidebar Menu
-    div(class="overlay fixed inset-0 bg-black z-30" id="overlay")
-    div(class="mobile-menu fixed left-0 top-0 h-full w-3/4 max-w-xs bg-blue-900 z-40 shadow-2xl p-6 overflow-y-auto" id="mobile-menu")
-      div(class="flex justify-between items-center mb-8")
-        div(class="flex items-center")
-          i(class="fas fa-building text-2xl mr-3 text-white")
-          span(class="text-xl font-bold text-white") BuildTech Engineers
-        button(class="text-white text-xl p-2" id="close-menu")
-          i(class="fas fa-times")
+extends layouts/main
+
+block content
+  // Hero Section
+  section(class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 sm:py-16 md:py-24")
+    div(class="container mx-auto px-4")
+      div(class="flex flex-col md:flex-row items-center")
+        div(class="md:w-1/2 mb-8 sm:mb-10 md:mb-0")
+          h1(class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6") Building Tomorrow's Infrastructure Today
+          p(class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100") Professional civil engineering solutions for residential, commercial, and industrial projects.
+          div(class="flex flex-col sm:flex-row gap-3 sm:gap-4")
+            a(href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg text-center transition duration-300 shadow-lg text-sm sm:text-base") Get a Quote
+            a(href="#services" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg text-center transition duration-300 text-sm sm:text-base") Our Services
+        
+        div(class="md:w-1/2 relative")
+          img(src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Civil Engineering Project" class="rounded-lg shadow-2xl w-full h-auto object-cover")
+  
+  // Services Section
+  section(id="services" class="py-16 sm:py-20 bg-white")
+    div(class="container mx-auto px-4")
+      div(class="text-center mb-10 sm:mb-16")
+        h2(class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4") Our Services
+        p(class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto") Comprehensive civil engineering services tailored to meet your project's needs.
       
-      div(class="space-y-6")
-        a(href="#" class="flex items-center text-white hover:text-blue-200 transition py-2 border-b border-blue-800")
-          i(class="fas fa-home mr-3")
-          span Home
-        a(href="#services" class="flex items-center text-white hover:text-blue-200 transition py-2 border-b border-blue-800")
-          i(class="fas fa-tools mr-3") 
-          span Services
-        a(href="#projects" class="flex items-center text-white hover:text-blue-200 transition py-2 border-b border-blue-800")
-          i(class="fas fa-project-diagram mr-3")
-          span Projects
-        a(href="#about" class="flex items-center text-white hover:text-blue-200 transition py-2 border-b border-blue-800")
-          i(class="fas fa-info-circle mr-3")
-          span About
-        a(href="#contact" class="flex items-center text-white hover:text-blue-200 transition py-2")
-          i(class="fas fa-envelope mr-3")
-          span Contact
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10")
+        // Service Card 1
+        div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
+          div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
+            i(class="fas fa-compass text-blue-700 text-2xl")
+          h3(class="text-xl font-bold mb-4 text-gray-800") Structural Design
+          p(class="text-gray-600 mb-6") Expert structural engineering for buildings, bridges, and infrastructure projects with focus on safety and efficiency.
+          a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
+            span Learn more 
+            i(class="fas fa-arrow-right ml-2")
+            
+        // Service Card 2
+        div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
+          div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
+            i(class="fas fa-drafting-compass text-blue-700 text-2xl")
+          h3(class="text-xl font-bold mb-4 text-gray-800") Project Management
+          p(class="text-gray-600 mb-6") Comprehensive project management services ensuring your project is completed on time, within budget, and to specification.
+          a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
+            span Learn more 
+            i(class="fas fa-arrow-right ml-2")
+            
+        // Service Card 3
+        div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
+          div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
+            i(class="fas fa-hard-hat text-blue-700 text-2xl")
+          h3(class="text-xl font-bold mb-4 text-gray-800") Construction Supervision
+          p(class="text-gray-600 mb-6") On-site supervision and quality control to ensure construction meets design specifications and industry standards.
+          a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
+            span Learn more 
+            i(class="fas fa-arrow-right ml-2")
+  
+  // Projects Section
+  section(id="projects" class="py-16 sm:py-20 bg-gray-50")
+    div(class="container mx-auto px-4")
+      div(class="text-center mb-10 sm:mb-16")
+        h2(class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4") Featured Projects
+        p(class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto") Explore our portfolio of successful engineering projects across various sectors.
       
-      div(class="mt-12 pt-6 border-t border-blue-800")
-        div(class="text-white text-sm mb-6") Contact Info:
-        div(class="space-y-3")
-          div(class="flex items-start text-white text-sm")
-            i(class="fas fa-phone mt-1 mr-3 text-yellow-400")
-            span +1 (555) 234-5678
-          div(class="flex items-start text-white text-sm")
-            i(class="fas fa-envelope mt-1 mr-3 text-yellow-400")
-            span info@buildtechengineers.com
-      // Hero Section
-    header(class="bg-gradient-to-r from-blue-900 to-blue-700 text-white")
-      nav(class="container mx-auto px-4 py-6 flex justify-between items-center")
-        div(class="flex items-center")
-          i(class="fas fa-building text-3xl mr-3")
-          span(class="text-2xl font-bold") BuildTech Engineers
-        div(class="hidden md:flex space-x-8")
-          a(href="#" class="hover:text-blue-200 transition") Home
-          a(href="#services" class="hover:text-blue-200 transition") Services
-          a(href="#projects" class="hover:text-blue-200 transition") Projects
-          a(href="#about" class="hover:text-blue-200 transition") About
-          a(href="#contact" class="hover:text-blue-200 transition") Contact
-        button(class="md:hidden text-xl" id="open-menu")
-          i(class="fas fa-bars")
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        // Project 1
+        div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
+          img(src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Highway Bridge Project" class="w-full h-56 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2 text-gray-800") Highway Bridge Expansion
+            p(class="text-gray-600 mb-4") Design and construction supervision of a major highway bridge expansion project.
+            div(class="flex justify-between items-center")
+              span(class="text-sm font-semibold text-blue-700") Infrastructure
+              a(href="#" class="text-blue-700 hover:text-blue-900") View Details
+        
+        // Project 2
+        div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
+          img(src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Commercial Building" class="w-full h-56 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2 text-gray-800") Commercial Tower
+            p(class="text-gray-600 mb-4") Structural design and analysis for a 25-story commercial building in the city center.
+            div(class="flex justify-between items-center")
+              span(class="text-sm font-semibold text-blue-700") Commercial
+              a(href="#" class="text-blue-700 hover:text-blue-900") View Details
+        
+        // Project 3
+        div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
+          img(src="https://images.unsplash.com/photo-1621905251189-08b45249be49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Water Treatment Facility" class="w-full h-56 object-cover")
+          div(class="p-6")
+            h3(class="text-xl font-bold mb-2 text-gray-800") Water Treatment Facility
+            p(class="text-gray-600 mb-4") Design and implementation of a modern water treatment facility serving 50,000 residents.
+            div(class="flex justify-between items-center")
+              span(class="text-sm font-semibold text-blue-700") Environmental
+              a(href="#" class="text-blue-700 hover:text-blue-900") View Details
+  
+  // Why Choose Us Section
+  section(id="about" class="py-20 bg-blue-900 text-white")
+    div(class="container mx-auto px-4")
+      div(class="text-center mb-16")
+        h2(class="text-4xl font-bold mb-4") Why Choose Us
+        p(class="text-xl text-blue-100 max-w-3xl mx-auto") With decades of experience and a commitment to excellence, we deliver exceptional civil engineering solutions.
       
-      div(class="container mx-auto px-4 py-12 sm:py-16 md:py-24")
-        div(class="flex flex-col md:flex-row items-center")
-          div(class="md:w-1/2 mb-8 sm:mb-10 md:mb-0")
-            h1(class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6") Building Tomorrow's Infrastructure Today
-            p(class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100") Professional civil engineering solutions for residential, commercial, and industrial projects.
-            div(class="flex flex-col sm:flex-row gap-3 sm:gap-4")
-              a(href="#contact" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg text-center transition duration-300 shadow-lg text-sm sm:text-base") Get a Quote
-              a(href="#services" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg text-center transition duration-300 text-sm sm:text-base") Our Services
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8")
+        div(class="text-center")
+          div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
+            i(class="fas fa-award text-3xl text-yellow-400")
+          h3(class="text-xl font-bold mb-2") Expertise
+          p(class="text-blue-100") 25+ years of industry experience with certified professionals
           
-          div(class="md:w-1/2 relative")
-            img(src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Civil Engineering Project" class="rounded-lg shadow-2xl w-full h-auto object-cover")
-    
-    // Services Section
-    section(id="services" class="py-16 sm:py-20 bg-white")
-      div(class="container mx-auto px-4")
-        div(class="text-center mb-10 sm:mb-16")
-          h2(class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4") Our Services
-          p(class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto") Comprehensive civil engineering services tailored to meet your project's needs.
+        div(class="text-center")
+          div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
+            i(class="fas fa-check-circle text-3xl text-yellow-400")
+          h3(class="text-xl font-bold mb-2") Quality
+          p(class="text-blue-100") Committed to the highest standards of quality and safety
+          
+        div(class="text-center")
+          div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
+            i(class="fas fa-bolt text-3xl text-yellow-400")
+          h3(class="text-xl font-bold mb-2") Innovation
+          p(class="text-blue-100") Using cutting-edge technology and innovative solutions
+          
+        div(class="text-center")
+          div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
+            i(class="fas fa-users text-3xl text-yellow-400")
+          h3(class="text-xl font-bold mb-2") Client-Focused
+          p(class="text-blue-100") Tailored solutions to meet each client's unique needs
+  
+  // Testimonials
+  section(class="py-20 bg-white")
+    div(class="container mx-auto px-4")
+      div(class="text-center mb-16")
+        h2(class="text-4xl font-bold text-gray-800 mb-4") Client Testimonials
+        p(class="text-xl text-gray-600 max-w-3xl mx-auto") See what our clients have to say about our engineering services.
+      
+      div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
+        // Testimonial 1
+        blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
+          p(class="text-gray-700 italic text-sm sm:text-base mb-6") "BuildTech Engineers delivered our project on time and within budget. Their attention to detail and innovative solutions exceeded our expectations."
+          div(class="flex items-center")
+            img(src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
+            div
+              p(class="font-bold text-gray-800 text-sm sm:text-base") Robert Johnson
+              p(class="text-gray-600 text-xs sm:text-sm") Project Director, Skyline Development
         
-        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10")
-          // Service Card 1
-          div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
-            div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
-              i(class="fas fa-compass text-blue-700 text-2xl")
-            h3(class="text-xl font-bold mb-4 text-gray-800") Structural Design
-            p(class="text-gray-600 mb-6") Expert structural engineering for buildings, bridges, and infrastructure projects with focus on safety and efficiency.
-            a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
-              span Learn more 
-              i(class="fas fa-arrow-right ml-2")
-              
-          // Service Card 2
-          div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
-            div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
-              i(class="fas fa-drafting-compass text-blue-700 text-2xl")
-            h3(class="text-xl font-bold mb-4 text-gray-800") Project Management
-            p(class="text-gray-600 mb-6") Comprehensive project management services ensuring your project is completed on time, within budget, and to specification.
-            a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
-              span Learn more 
-              i(class="fas fa-arrow-right ml-2")
-              
-          // Service Card 3
-          div(class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 border border-gray-200 flex flex-col")
-            div(class="bg-blue-100 rounded-full h-16 w-16 flex items-center justify-center mb-6")
-              i(class="fas fa-hard-hat text-blue-700 text-2xl")
-            h3(class="text-xl font-bold mb-4 text-gray-800") Construction Supervision
-            p(class="text-gray-600 mb-6") On-site supervision and quality control to ensure construction meets design specifications and industry standards.
-            a(href="#" class="mt-auto text-blue-700 font-semibold hover:text-blue-900 flex items-center") 
-              span Learn more 
-              i(class="fas fa-arrow-right ml-2")
-    
-    // Projects Section
-    section(id="projects" class="py-16 sm:py-20 bg-gray-50")
-      div(class="container mx-auto px-4")
-        div(class="text-center mb-10 sm:mb-16")
-          h2(class="text-3xl sm:text-4xl font-bold text-gray-800 mb-3 sm:mb-4") Featured Projects
-          p(class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto") Explore our portfolio of successful engineering projects across various sectors.
+        // Testimonial 2
+        blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
+          p(class="text-gray-700 italic text-sm sm:text-base mb-6") "Working with BuildTech Engineers was a seamless experience. Their team's expertise and professionalism made our complex infrastructure project a success."
+          div(class="flex items-center")
+            img(src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
+            div
+              p(class="font-bold text-gray-800 text-sm sm:text-base") Sarah Williams
+              p(class="text-gray-600 text-xs sm:text-sm") CEO, Urban Infrastructure Inc.
         
-        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
-          // Project 1
-          div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
-            img(src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Highway Bridge Project" class="w-full h-56 object-cover")
-            div(class="p-6")
-              h3(class="text-xl font-bold mb-2 text-gray-800") Highway Bridge Expansion
-              p(class="text-gray-600 mb-4") Design and construction supervision of a major highway bridge expansion project.
-              div(class="flex justify-between items-center")
-                span(class="text-sm font-semibold text-blue-700") Infrastructure
-                a(href="#" class="text-blue-700 hover:text-blue-900") View Details
-          
-          // Project 2
-          div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
-            img(src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Commercial Building" class="w-full h-56 object-cover")
-            div(class="p-6")
-              h3(class="text-xl font-bold mb-2 text-gray-800") Commercial Tower
-              p(class="text-gray-600 mb-4") Structural design and analysis for a 25-story commercial building in the city center.
-              div(class="flex justify-between items-center")
-                span(class="text-sm font-semibold text-blue-700") Commercial
-                a(href="#" class="text-blue-700 hover:text-blue-900") View Details
-          
-          // Project 3
-          div(class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300")
-            img(src="https://images.unsplash.com/photo-1621905251189-08b45249be49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Water Treatment Facility" class="w-full h-56 object-cover")
-            div(class="p-6")
-              h3(class="text-xl font-bold mb-2 text-gray-800") Water Treatment Facility
-              p(class="text-gray-600 mb-4") Design and implementation of a modern water treatment facility serving 50,000 residents.
-              div(class="flex justify-between items-center")
-                span(class="text-sm font-semibold text-blue-700") Environmental
-                a(href="#" class="text-blue-700 hover:text-blue-900") View Details
-    
-    // Why Choose Us Section
-    section(class="py-20 bg-blue-900 text-white")
-      div(class="container mx-auto px-4")
-        div(class="text-center mb-16")
-          h2(class="text-4xl font-bold mb-4") Why Choose Us
-          p(class="text-xl text-blue-100 max-w-3xl mx-auto") With decades of experience and a commitment to excellence, we deliver exceptional civil engineering solutions.
-        
-        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8")
-          div(class="text-center")
-            div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
-              i(class="fas fa-award text-3xl text-yellow-400")
-            h3(class="text-xl font-bold mb-2") Expertise
-            p(class="text-blue-100") 25+ years of industry experience with certified professionals
+        // Testimonial 3
+        blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
+          p(class="text-gray-700 italic text-sm sm:text-base mb-6") "The structural analysis and design provided by BuildTech for our commercial building was exceptional. We highly recommend their services."
+          div(class="flex items-center")
+            img(src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
+            div
+              p(class="font-bold text-gray-800 text-sm sm:text-base") Michael Chen
+              p(class="text-gray-600 text-xs sm:text-sm") Chief Architect, Modern Structures Ltd.
+  
+  // Contact Section
+  section(id="contact" class="py-16 sm:py-20 bg-gray-100")
+    div(class="container mx-auto px-4")
+      div(class="bg-white rounded-lg shadow-xl overflow-hidden max-w-5xl mx-auto")
+        div(class="flex flex-col md:flex-row")
+          div(class="bg-blue-900 text-white p-6 sm:p-8 md:p-12 md:w-2/5")
+            h2(class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6") Contact Us
+            p(class="mb-6 sm:mb-8 text-blue-100 text-sm sm:text-base") Get in touch with our team of experts to discuss your project requirements.
             
-          div(class="text-center")
-            div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
-              i(class="fas fa-check-circle text-3xl text-yellow-400")
-            h3(class="text-xl font-bold mb-2") Quality
-            p(class="text-blue-100") Committed to the highest standards of quality and safety
-            
-          div(class="text-center")
-            div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
-              i(class="fas fa-bolt text-3xl text-yellow-400")
-            h3(class="text-xl font-bold mb-2") Innovation
-            p(class="text-blue-100") Using cutting-edge technology and innovative solutions
-            
-          div(class="text-center")
-            div(class="bg-blue-800 rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-6")
-              i(class="fas fa-users text-3xl text-yellow-400")
-            h3(class="text-xl font-bold mb-2") Client-Focused
-            p(class="text-blue-100") Tailored solutions to meet each client's unique needs
-    
-    // Testimonials
-    section(class="py-20 bg-white")
-      div(class="container mx-auto px-4")
-        div(class="text-center mb-16")
-          h2(class="text-4xl font-bold text-gray-800 mb-4") Client Testimonials
-          p(class="text-xl text-gray-600 max-w-3xl mx-auto") See what our clients have to say about our engineering services.
-        
-        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8")
-          // Testimonial 1
-          blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
-            p(class="text-gray-700 italic text-sm sm:text-base mb-6") "BuildTech Engineers delivered our project on time and within budget. Their attention to detail and innovative solutions exceeded our expectations."
-            div(class="flex items-center")
-              img(src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
-              div
-                p(class="font-bold text-gray-800 text-sm sm:text-base") Robert Johnson
-                p(class="text-gray-600 text-xs sm:text-sm") Project Director, Skyline Development
-          
-          // Testimonial 2
-          blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
-            p(class="text-gray-700 italic text-sm sm:text-base mb-6") "Working with BuildTech Engineers was a seamless experience. Their team's expertise and professionalism made our complex infrastructure project a success."
-            div(class="flex items-center")
-              img(src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
-              div
-                p(class="font-bold text-gray-800 text-sm sm:text-base") Sarah Williams
-                p(class="text-gray-600 text-xs sm:text-sm") CEO, Urban Infrastructure Inc.
-          
-          // Testimonial 3
-          blockquote(class="bg-gray-50 p-6 sm:p-8 rounded-lg border-l-4 border-blue-700 shadow-lg")
-            p(class="text-gray-700 italic text-sm sm:text-base mb-6") "The structural analysis and design provided by BuildTech for our commercial building was exceptional. We highly recommend their services."
-            div(class="flex items-center")
-              img(src="https://randomuser.me/api/portraits/men/67.jpg" alt="Client" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4")
-              div
-                p(class="font-bold text-gray-800 text-sm sm:text-base") Michael Chen
-                p(class="text-gray-600 text-xs sm:text-sm") Chief Architect, Modern Structures Ltd.
-    
-    // Contact Section
-    section(id="contact" class="py-16 sm:py-20 bg-gray-100")
-      div(class="container mx-auto px-4")
-        div(class="bg-white rounded-lg shadow-xl overflow-hidden max-w-5xl mx-auto")
-          div(class="flex flex-col md:flex-row")
-            div(class="bg-blue-900 text-white p-6 sm:p-8 md:p-12 md:w-2/5")
-              h2(class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6") Contact Us
-              p(class="mb-6 sm:mb-8 text-blue-100 text-sm sm:text-base") Get in touch with our team of experts to discuss your project requirements.
+            div(class="space-y-6")
+              div(class="flex items-start")
+                div(class="flex-shrink-0 mt-1")
+                  i(class="fas fa-map-marker-alt text-yellow-400 mr-3")
+                div
+                  p 123 Engineering Ave, Suite 500
+                  p City Center, NY 10001
               
-              div(class="space-y-6")
-                div(class="flex items-start")
-                  div(class="flex-shrink-0 mt-1")
-                    i(class="fas fa-map-marker-alt text-yellow-400 mr-3")
-                  div
-                    p 123 Engineering Ave, Suite 500
-                    p City Center, NY 10001
-                
-                div(class="flex items-start")
-                  div(class="flex-shrink-0 mt-1")
-                    i(class="fas fa-phone text-yellow-400 mr-3")
-                  div
-                    p +1 (555) 234-5678
-                
-                div(class="flex items-start")
-                  div(class="flex-shrink-0 mt-1")
-                    i(class="fas fa-envelope text-yellow-400 mr-3")
-                  div
-                    p info@buildtechengineers.com
-                
-                div(class="flex space-x-4 mt-8")
-                  a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
-                    i(class="fab fa-linkedin-in")
-                  a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
-                    i(class="fab fa-twitter")
-                  a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
-                    i(class="fab fa-facebook-f")
-            
-            div(class="p-8 md:p-12 md:w-3/5")
-              h3(class="text-2xl font-bold text-gray-800 mb-6") Send us a message
+              div(class="flex items-start")
+                div(class="flex-shrink-0 mt-1")
+                  i(class="fas fa-phone text-yellow-400 mr-3")
+                div
+                  p +1 (555) 234-5678
               
-              form(class="space-y-6")
-                div(class="grid grid-cols-1 md:grid-cols-2 gap-6")
-                  div
-                    label(for="name" class="block text-sm font-medium text-gray-700 mb-1") Name
-                    input(type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
-                  
-                  div
-                    label(for="email" class="block text-sm font-medium text-gray-700 mb-1") Email
-                    input(type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
+              div(class="flex items-start")
+                div(class="flex-shrink-0 mt-1")
+                  i(class="fas fa-envelope text-yellow-400 mr-3")
+                div
+                  p info@buildtechengineers.com
+              
+              div(class="flex space-x-4 mt-8")
+                a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
+                  i(class="fab fa-linkedin-in")
+                a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
+                  i(class="fab fa-twitter")
+                a(href="#" class="bg-blue-800 hover:bg-blue-700 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300")
+                  i(class="fab fa-facebook-f")
+          
+          div(class="p-8 md:p-12 md:w-3/5")
+            h3(class="text-2xl font-bold text-gray-800 mb-6") Send us a message
+            
+            form(class="space-y-6")
+              div(class="grid grid-cols-1 md:grid-cols-2 gap-6")
+                div
+                  label(for="name" class="block text-sm font-medium text-gray-700 mb-1") Name
+                  input(type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
                 
                 div
-                  label(for="subject" class="block text-sm font-medium text-gray-700 mb-1") Subject
-                  input(type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
-                
-                div
-                  label(for="message" class="block text-sm font-medium text-gray-700 mb-1") Message
-                  textarea(id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
-                
-                div
-                  button(type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-md transition duration-300 w-full md:w-auto") Send Message
-    
-    // Footer
-    footer(class="bg-gray-900 text-white py-12")
-      div(class="container mx-auto px-4")
-        div(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10")
-          div
-            div(class="flex items-center mb-4")
-              i(class="fas fa-building text-2xl mr-3 text-yellow-400")
-              span(class="text-xl font-bold") BuildTech Engineers
-            p(class="text-gray-400 mb-6") Providing exceptional civil engineering services since 2000.
-            div(class="flex space-x-4")
-              a(href="#" class="text-gray-400 hover:text-white")
-                i(class="fab fa-facebook-f")
-              a(href="#" class="text-gray-400 hover:text-white")
-                i(class="fab fa-twitter")
-              a(href="#" class="text-gray-400 hover:text-white")
-                i(class="fab fa-linkedin-in")
-              a(href="#" class="text-gray-400 hover:text-white")
-                i(class="fab fa-instagram")
-          
-          div
-            h4(class="text-lg font-bold mb-4") Quick Links
-            ul(class="space-y-2")
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Home
-              li
-                a(href="#services" class="text-gray-400 hover:text-white transition") Services
-              li
-                a(href="#projects" class="text-gray-400 hover:text-white transition") Projects
-              li
-                a(href="#about" class="text-gray-400 hover:text-white transition") About Us
-              li
-                a(href="#contact" class="text-gray-400 hover:text-white transition") Contact
-          
-          div
-            h4(class="text-lg font-bold mb-4") Services
-            ul(class="space-y-2")
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Structural Engineering
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Project Management
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Construction Supervision
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Geotechnical Services
-              li
-                a(href="#" class="text-gray-400 hover:text-white transition") Environmental Engineering
-          
-          div
-            h4(class="text-lg font-bold mb-4") Contact Info
-            ul(class="space-y-4 text-gray-400")
-              li(class="flex items-start")
-                i(class="fas fa-map-marker-alt mt-1 mr-3 text-yellow-400")
-                span 123 Engineering Ave, Suite 500<br>City Center, NY 10001
-              li(class="flex items-center")
-                i(class="fas fa-phone mr-3 text-yellow-400")
-                span +1 (555) 234-5678
-              li(class="flex items-center")
-                i(class="fas fa-envelope mr-3 text-yellow-400")
-                span info@buildtechengineers.com
-          hr(class="border-gray-800 my-8")
-        div(class="flex flex-col md:flex-row justify-between items-center")
-          p(class="text-gray-500") © 2025 BuildTech Engineers. All rights reserved.
-          p(class="text-gray-500 mt-4 md:mt-0") Designed with excellence, built to last.
-    
-    // Mobile menu JavaScript
-    script.
-      document.addEventListener('DOMContentLoaded', function() {
-        const openMenuBtn = document.getElementById('open-menu');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('overlay');
-        const body = document.body;
-        
-        // Function to open menu
-        function openMenu() {
-          mobileMenu.classList.add('show');
-          overlay.classList.add('show');
-          body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-        }
-        
-        // Function to close menu
-        function closeMenu() {
-          mobileMenu.classList.remove('show');
-          overlay.classList.remove('show');
-          body.style.overflow = ''; // Re-enable scrolling
-        }
-        
-        // Event listeners
-        openMenuBtn.addEventListener('click', openMenu);
-        closeMenuBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-        
-        // Close menu when clicking on a menu link (for smooth navigation)
-        const menuLinks = mobileMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', closeMenu);
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-          if (window.innerWidth >= 768) { // md breakpoint in Tailwind
-            closeMenu(); // Close mobile menu on larger screens
-          }
-        });
-      });
+                  label(for="email" class="block text-sm font-medium text-gray-700 mb-1") Email
+                  input(type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
+              
+              div
+                label(for="subject" class="block text-sm font-medium text-gray-700 mb-1") Subject
+                input(type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
+              
+              div
+                label(for="message" class="block text-sm font-medium text-gray-700 mb-1") Message
+                textarea(id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent")
+              
+              div
+                button(type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-md transition duration-300 w-full md:w-auto") Send Message

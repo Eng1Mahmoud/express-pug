@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title || 'BuildTech Engineers'} 
+    link(rel="stylesheet", href="/styles/global.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
+    block styles
+    style.
+      .mobile-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .mobile-menu.show {
+        transform: translateX(0);
+      }
+      .overlay {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+      .overlay.show {
+        opacity: 0.5;
+        visibility: visible;
+      }
+  body(class="bg-gray-50 font-sans min-h-screen flex flex-col")
+    include ../components/header
+    
+    block content
+    
+    include ../components/footer
+    
+    block scripts
+    
+    // Mobile menu JavaScript
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        const body = document.body;
+        
+        // Function to open menu
+        function openMenu() {
+          mobileMenu.classList.add('show');
+          overlay.classList.add('show');
+          body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        // Function to close menu
+        function closeMenu() {
+          mobileMenu.classList.remove('show');
+          overlay.classList.remove('show');
+          body.style.overflow = ''; // Re-enable scrolling
+        }
+        
+        // Event listeners
+        if (openMenuBtn) {
+          openMenuBtn.addEventListener('click', openMenu);
+        }
+        
+        if (closeMenuBtn) {
+          closeMenuBtn.addEventListener('click', closeMenu);
+        }
+        
+        if (overlay) {
+          overlay.addEventListener('click', closeMenu);
+        }
+        
+        // Close menu when clicking on a menu link (for smooth navigation)
+        if (mobileMenu) {
+          const menuLinks = mobileMenu.querySelectorAll('a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+          });
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth >= 768) { // md breakpoint in Tailwind
+            if (mobileMenu && mobileMenu.classList.contains('show')) {
+              closeMenu(); // Close mobile menu on larger screens
+            }
+          }
+        });
+      });

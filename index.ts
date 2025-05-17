@@ -17,12 +17,16 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // all other routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    title: "Civil Engineering Solutions | Expert Services"
+  });
 });
 
 // unhandled routes
 app.use((req, res) => {
-  res.status(404).render("404");
+  res.status(404).render("404", {
+    title: "Page Not Found | BuildTech Engineers"
+  });
 });
 
 app.listen(port, () => {
